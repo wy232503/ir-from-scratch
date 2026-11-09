@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+
+# 不进仓库：AI 参考实现、课件衍生文件、内部交接文档
+py_index_build.py
+_make_docx_1028.py
+*.docx
+进度与下一步.md
