@@ -27,6 +27,7 @@ def index_build(documents):
     print(dict(post))
     return post,df
 def intersect(a,b):
+    #两个升序整数列表求交集
     assert not a or isinstance(a[0], int), "intersect: a 只接受 docID 整数列表，请先转换"
     assert not b or isinstance(b[0], int), "intersect: b 只接受 docID 整数列表，请先转换"
     i = j = 0
@@ -44,6 +45,7 @@ def intersect(a,b):
             j += 1
     return result
 def docids(post,w):
+    #从 posting 里抽纯 docID 列表
     return [d for d,_ in post.get(w,[])]
 def multi_and(post, df, words):
     """返回所有词同时出现的 docID 列表（升序）。"""
@@ -58,6 +60,7 @@ def multi_and(post, df, words):
         res = intersect(res,lst)
     return res
 def search(post, df, query):
+    #检索
     return multi_and(post, df, tokenize(query))
 
 
